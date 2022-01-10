@@ -1,0 +1,122 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content%}
+
+
+<body>
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+          <div class="numbertext"></div>
+          <img src="{% static 'img/homeimg/home3.jpeg' %}" style="width:90%">
+
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext"></div>
+          <img src="{% static 'img/homeimg/home5.jpeg' %}" style="width:95%">
+
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext"></div>
+          <img src="{% static 'img/homeimg/home6.jpeg' %}" style="width:100%">
+
+        </div>
+        <div class="mySlides fade">
+          <div class="numbertext"></div>
+          <img src="{% static 'img/homeimg/home0.jpeg' %}" style="width:95%">
+
+        </div>
+
+    </div>
+    <!-- end of slider -->
+
+    <section class="jj">
+        <h1> buy original art from our local artists! </h1>
+        <h4> A selection of different types of Art for you to choose </h4>
+        <div class="outer-div">
+            <div class="inner-div1">
+                <img src="{% static 'img/homeimg/home0.jpeg' %}">
+            </div>
+            <div class="inner-div2">
+                <img src="{% static 'img/homeimg/home3.jpeg' %}">
+            </div>
+            <div class="inner-div3">
+                <img src="{% static 'img/homeimg/home6.jpeg' %}">
+            </div>
+            <div>
+                <img src="{% static 'img/homeimg/home5.jpeg' %}">
+            </div>
+
+        </div>
+    </section>
+    <!-- cirlce images -->
+    <section class="bread">
+        <h1> Discover our local Art!</h1>
+        <div class="big_circle">
+                <div class="container">
+            <div class="circle"> <img src="{% static 'img/homeimg/home5.jpeg' %}" class="image"></div>
+            <div class="middle">
+                <div class="text">Lol</div>
+            </div>
+                </div>
+
+                <div class="container">
+              <div class="circle"><img src="{% static 'img/homeimg/home6.jpeg' %}" class="image"></div>
+              <div class="middle">
+                <div class="text">Oil Paintings</div>
+              </div>
+            </div>
+                <div class="container">
+                <div class="circle"> <img src="{% static 'img/homeimg/home5.jpeg' %}" class="image"></div>
+                <div class="middle">
+                <div class="text">Street Art</div>
+                </div>
+            </div>
+                    <div class="container">
+                  <div class="circle"><img src="{% static 'img/homeimg/home6.jpeg' %}" class="image"></div>
+                  <div class="middle">
+                    <div class="text">Oil Paintings</div>
+                  </div>
+                </div>
+                    <div class="container">
+                  <div class="circle"><img src="{% static 'img/homeimg/landscapes.jpeg' %}" class="image"></div>
+                  <div class="middle">
+                    <div class="text">Abstract</div>
+                  </div>
+                </div>
+                    <div class="container">
+                      <div class="circle"><img src="{% static 'img/homeimg/home3.jpeg' %}" class="image"></div>
+                  <div class="middle">
+                    <div class="text">portrait</div>
+                  </div>
+                </div>
+
+
+                    <div class="container">
+                  <div class="circle"><img src="{% static 'img/homeimg/home2.jpeg' %}" class="image"></div>
+                  <div class="middle">
+                    <div class="text">acrylic </div>
+                  </div>
+                </div>
+
+                    <div class="container">
+                <div class="circle"><img src="{% static 'img/homeimg/portrait.jpeg' %}" class="image"></div>
+                  <div class="middle">
+                    <div class="text">pastel</div>
+                  </div>
+                </div>
+
+
+                <div class="container">
+             <div class="circle"><img src="{% static 'img/homeimg/abstract.jpeg' %}" class="image"></div>
+              <div class="middle">
+                <div class="text">wax</div>
+              </div>
+            </div>
+    </div>
+    </section>
+</body>
+{% endblock content%}
+

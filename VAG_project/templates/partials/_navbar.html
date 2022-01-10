@@ -1,0 +1,95 @@
+{% load static%}
+
+<header>
+      <nav class="navbar navbar-expand-lg navbar-light" style='background-color: #a3b18a;'>
+
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{% url 'homepage' %}" class="logo" style="font-size: 2.5rem";>MAU'ZART</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarScroll">
+      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="{%url 'gallery' %}" style="font-size: 2rem; margin-left: 10vh;">GALLERY</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" style="font-size: 2rem; margin-left: 10vh;">UPLOAD</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 2rem; margin-left: 10vh;">
+            ARTWORKS
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+            <li><a class="dropdown-item" href="#">SCULPTURES</a></li>
+            <li><a class="dropdown-item" href="#">PHOTOGRAPHY</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">PAINTINGS</a></li>
+            <li><a class="dropdown-item" href="#">DRAWINGS</a></li>
+          </ul>
+
+        </li>
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 2rem; margin-left: 10vh;">
+            ARTISTS
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+            <li><a class="dropdown-item" href="#">SCULPTORS</a></li>
+            <li><a class="dropdown-item" href="#">PAINTERS</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">PHOTOGRAPHERS</a></li>
+          </ul>
+
+        </li>
+
+     {% if user.is_authenticated %}
+
+
+        <li class="nav-link mr-3 active is">
+          <a href="javascript:{document.getElementById('logout').submit()}" class="nav-link">
+            <i class="fas fa-sign-out-alt"></i> Logout
+          </a>
+          <form action="{% url 'logout' %}" method="POST" id="logout">
+            {% csrf_token %}
+            <input type="hidden">
+          </form>
+        </li>
+
+          {% else %}
+          <li  {% if '/register/' == request.path %}
+          class = "nav-item active mr-3"
+          {% else %}
+          class = "nav-item mr-3"
+          {% endif %}>
+            <a class="nav-link active is" href="{%url 'register'%}" style=" font-size: 2rem;">
+              <i class="fas fa-user-plus" style=" font-size: 2rem;"></i> Register</a>
+          </li>
+          <li class="nav-item mr-3">
+            <a class="nav-link active is" href="{%url 'login'%}" style=" font-size: 2rem;">
+              <i class="fas fa-sign-in-alt" style=" font-size: 2rem;"></i>
+
+              Login</a>
+          </li>
+          {% endif %}
+
+
+        </ul>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+</header>
+
+
+
+
+
+
+
