@@ -3,6 +3,7 @@ from .models import Gallery
 # Create your views here.
 
 def gallery (requests):
+
    gallery = Gallery.objects.all()
    context = {
         'gallery' : gallery

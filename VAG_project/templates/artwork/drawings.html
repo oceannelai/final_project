@@ -1,0 +1,78 @@
+{% extends "base.html"%}
+
+{% load static %}
+{% block title %}
+
+Drawings
+{% endblock title %}
+{% block content %}
+<style>
+        .sub-div2{
+            margin-left: 6vh;
+            margin-right: 6vh;
+
+        }
+        .grid{
+  margin: 80px;
+  display: inline-grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+  align-items: center;
+}
+
+.grid > article{
+  background: : lightblue;
+  border: none;
+  box-shadow: 2px 2px 0px 0px burlywood rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  text-align: center;
+  width: 250px;
+  transition: transform .3s;
+
+}
+
+.grid > article:hover{
+  transform: translateY(5px);
+  box-shadow: 2px px 0px 0px rgba(0, 0, 0, 0.4);
+
+
+}
+
+.grid > article img{
+  width: 100%;
+  border-top-left-radius:20px ;
+  border-top-right-radius: 20px;
+  margin-top: 10vh;
+}
+
+.text{
+  padding:  0 20px 20px;
+  background-color: #a3b18a;
+  border-bottom-right-radius:20px ;
+  border-bottom-left-radius: 20px;
+}
+
+.text h3{
+  text-transform: uppercase;
+}
+
+.text button{
+  background: #344e41;
+  border-radius: 20px;
+  border: none;
+  color: #eddcd2;
+  padding: 10px;
+  width: 100%;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+section.artist-1{
+  background-color: #dad7cd
+}
+section {
+padding: 0;
+}
+</style>
+{% endblock content %}

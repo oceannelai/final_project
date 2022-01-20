@@ -1,0 +1,151 @@
+{% extends "base.html"%}
+{% load static %}
+{% block title %}
+
+Paintings
+{% endblock title %}
+{% block content %}
+<style>
+        .sub-div2{
+            margin-left: 6vh;
+            margin-right: 6vh;
+
+        }
+        .grid{
+  margin: 80px;
+  display: inline-grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+  align-items: center;
+}
+
+.grid > article{
+  background: : lightblue;
+  border: none;
+  box-shadow: 2px 2px 0px 0px burlywood rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  text-align: center;
+  width: 250px;
+  transition: transform .3s;
+
+}
+
+.grid > article:hover{
+  transform: translateY(5px);
+  box-shadow: 2px px 0px 0px rgba(0, 0, 0, 0.4);
+
+
+}
+
+.grid > article img{
+  width: 100%;
+  border-top-left-radius:20px ;
+  border-top-right-radius: 20px;
+  margin-top: 10vh;
+}
+
+.text{
+  padding:  0 20px 20px;
+  background-color: #a3b18a;
+  border-bottom-right-radius:20px ;
+  border-bottom-left-radius: 20px;
+}
+
+.text h3{
+  text-transform: uppercase;
+}
+
+.text button{
+  background: #344e41;
+  border-radius: 20px;
+  border: none;
+  color: #eddcd2;
+  padding: 10px;
+  width: 100%;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+section.artist-1{
+
+  background-color: #dad7cd
+}
+.inner-div1{
+display: inline-block;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  ackground-image: url('img/Tanya/profile.jpeg');
+
+  }
+
+section {
+padding: 0;
+}
+    </style>
+<section class="artist-1">
+    <div class="container">
+        <main class="grid">
+            <article style="width: 150%;">
+                <div class="outer-div" style="display: inline-flex; align-content: center;">
+                    <div class="inner-div1">
+<!--                        <img src="{%static 'img/Tanya/profile.jpeg' %}">-->
+                        <div class="text">
+                            <h3><b>Tanya</b></h3>
+                            <p> Cheung </p>
+                            <button> FOLLOW</button>
+                        </div>
+
+                    </div>
+                    </div>
+            </article>
+
+                    <div class="inner-div2" style="display:inline-flex;">
+                        <div class="sub-div2" style="margin-left: 10vw;">
+                          <img src="{%static 'img/Tanya/image0.jpeg' %}" alt="" style="width: 23rem; height: 40vh;">
+                        </div>
+                        <div class="sub-div2">
+                            <img src="{%static 'img/Tanya/image1.jpeg'%}" style="width: 40rem;height: 40vh;">
+                        </div>
+                         <div class="sub-div2">
+                            <img src="{%static 'img/Tanya/image2.jpeg'%}" style="width: 30rem;height: 40vh;">
+                        </div>
+                         <div class="sub-div2">
+                            <img src="{%static 'img/Tanya/image3.jpeg'%}" style="width: 30rem;height: 40vh;">
+                        </div>
+
+                    </div>
+        </main>
+                </div>
+
+        </section>
+<!--UPLOAD PICTURES-->
+<!--<li class="nav-item">-->
+<!--  <a class="nav-link active" href="{% url 'paintings'%}"></a>-->
+<!--</li>-->
+<!--<script>-->
+<!--  document.addEventListener("DOMContentLoaded", () => {-->
+<!--    const recentImageDataUrl = JSON.parse(localStorage.getItem("recent-image"));-->
+<!--  let div = document.getElementById('recentImg')-->
+
+
+<!--    for (image of recentImageDataUrl){-->
+<!--        let innerDiv = document.createElement('div')-->
+
+<!--        let img = document.createElement('img')-->
+<!--        img.setAttribute("width", 200)-->
+<!--        img.style.marginLeft = "5vh";-->
+<!--        img.setAttribute("src", image );-->
+<!--        innerDiv.append(img)-->
+<!--        div.append(innerDiv)-->
+<!--    }-->
+
+<!--});-->
+
+<!--</script>-->
+{% endblock content %}

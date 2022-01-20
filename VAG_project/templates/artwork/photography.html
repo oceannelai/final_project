@@ -1,0 +1,298 @@
+{% extends "base.html"%}
+{% load static %}
+{% block title %}
+
+Photography
+{% endblock title %}
+{% block content %}
+
+   <style>
+.sub-div2{
+margin-left: 6vh;
+margin-right: 6vh;
+ }
+.grid{
+  margin: 80px;
+  display: inline-grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+  align-items: center;
+}
+
+.grid > article{
+  background: : lightblue;
+  border: none;
+  box-shadow: 2px 2px 0px 0px burlywood rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  text-align: center;
+  width: 250px;
+  transition: transform .3s;
+
+}
+
+.grid > article:hover{
+  transform: translateY(5px);
+  box-shadow: 2px px 0px 0px rgba(0, 0, 0, 0.4);
+
+
+}
+
+.grid > article img{
+  width: 100%;
+  border-top-left-radius:20px ;
+  border-top-right-radius: 20px;
+  margin-top: 10vh;
+}
+
+.text{
+  padding:  0 20px 20px;
+  background-color: #a3b18a;
+  border-bottom-right-radius:20px ;
+  border-bottom-left-radius: 20px;
+}
+
+.text h3{
+  text-transform: uppercase;
+}
+
+.text button{
+  background: #344e41;
+  border-radius: 20px;
+  border: none;
+  color: #eddcd2;
+  padding: 10px;
+  width: 100%;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+section.artist-1{
+  background-color: #dad7cd
+}
+section {
+padding: 0;
+}
+<!--carousel-->
+.features {
+  position: absolute;
+  width: 900px;
+  height: 500px;
+  right: 100px;
+  top: 100px;
+}
+
+.features {
+  height: 600px;
+  margin: 0;
+  display: grid;
+  grid-template-rows: 500px 100px;
+  grid-template-columns: 1fr 30px 30px 30px 30px 30px 1fr;
+  align-items: center;
+  justify-items: center;
+}
+
+main#carousel {
+  grid-row: 1 / 2;
+  grid-column: 1 / 8;
+  width: 60vw;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  perspective: 600px;
+  --items: 5;
+  --middle: 3;
+  --position: 1;
+  pointer-events: none;
+}
+
+div.item {
+  position: absolute;
+  width: 300px;
+  height: 400px;
+  background: rgba(246, 246, 246, 0.27);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(246, 246, 246, 0.29);
+  --r: calc(var(--position) - var(--offset));
+  --abs: max(calc(var(--r) * -1), var(--r));
+  transition: all 0.25s linear;
+  transform: rotateY(calc(-10deg * var(--r))) translateX(calc(-300px * var(--r)));
+  z-index: calc((var(--position) - var(--abs)));
+}
+
+div.item:nth-of-type(1) {
+  --offset: 1;
+}
+
+div.item:nth-of-type(2) {
+  --offset: 2;
+}
+
+div.item:nth-of-type(3) {
+  --offset: 3;
+}
+
+div.item:nth-of-type(4) {
+  --offset: 4;
+}
+
+div.item:nth-of-type(5) {
+  --offset: 5;
+}
+
+input:nth-of-type(1) {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+input:nth-of-type(1):checked~main#carousel {
+  --position: 1;
+}
+
+input:nth-of-type(2) {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+}
+
+input:nth-of-type(2):checked~main#carousel {
+  --position: 2;
+}
+
+input:nth-of-type(3) {
+  grid-column: 4 /5;
+  grid-row: 2 / 3;
+}
+
+input:nth-of-type(3):checked~main#carousel {
+  --position: 3;
+}
+
+input:nth-of-type(4) {
+  grid-column: 5 / 6;
+  grid-row: 2 / 3;
+}
+
+input:nth-of-type(4):checked~main#carousel {
+  --position: 4;
+}
+
+input:nth-of-type(5) {
+  grid-column: 6 / 7;
+  grid-row: 2 / 3;
+}
+
+input:nth-of-type(5):checked~main#carousel {
+  --position: 5;
+}
+
+/* ------------------------------ InnerCards ----------------------- */
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #0000;
+  background-clip: border-box;
+  border: 0px;
+  border-radius: 0rem;
+  font-size: 12px;
+  line-height: 16px;
+
+    </style>
+
+
+    <section class="artist-1">
+    <div class="container">
+        <main class="grid">
+            <article style="width: 90%;">
+                <div class="outer-div" style="display: inline-flex; align-content: center; " >
+                    <div class="inner-div1">
+                        <img src="{% static 'img/alexia/profile.jpg' %}">
+                        <div class="text">
+                            <h3><b>Alexia </b> </h3>
+                            <p> Lim How </p>
+                            <button> FOLLOW</button>
+                        </div>
+
+ <div class="features">
+      <h5 class="deal"></h5>
+      <input type="radio" name="position" checked />
+      <input type="radio" name="position" />
+      <input type="radio" name="position" />
+      <input type="radio" name="position" />
+      <input type="radio" name="position" />
+      <main id="carousel">
+        <div class="item">
+          <div id="hlight" class="card" style="width: 100%;">
+            <img class="card-img-top" src="{% static 'img/alexia/1.jpg'%}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title"></h5>
+              <p class="card-text"></p>
+
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div id="hlight" class="card" style="width: 100%;">
+            <img class="card-img-top" src="{% static 'img/alexia/2.jpg'%}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title"></h5>
+              <p class="card-text"></p>
+
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div id="hlight" class="card" style="width: 100%;">
+            <img class="card-img-top" src="{% static 'img/alexia/3.JPG'%}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title"></h5>
+              <p class="card-text"></p>
+
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div id="hlight" class="card" style="width: 100%;">
+            <img class="card-img-top" src="{% static 'img/alexia/4.jpeg'%}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title"></h5>
+              <p class="card-text">.</p>
+
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div id="hlight" class="card" style="width: 100%;">
+            <img class="card-img-top" src="{% static 'img/alexia/7.HEIC'%}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title"></h5>
+              <p class="card-text"></p>
+
+            </div>
+          </div>
+          <main>
+        </div>
+  </article>
+                    </div>
+                </div>
+            </article>
+
+
+        </main>
+
+    </div>
+
+    </section>
+
+<!--UPLOAD PICTURES-->
+{% endblock content %}
+
+
+
